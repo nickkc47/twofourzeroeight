@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace twozerofoureight
 {
     class TwoZeroFourEightModel : Model
+
     {
         protected int boardSize; // default is 4
         protected int[,] board;
