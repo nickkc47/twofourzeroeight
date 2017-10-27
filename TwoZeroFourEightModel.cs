@@ -11,6 +11,7 @@ namespace twozerofoureight
         protected int boardSize; // default is 4
         protected int[,] board;
         protected Random rand;
+        public int result = 0;
 
         public TwoZeroFourEightModel() : this(4)
         {
@@ -20,6 +21,10 @@ namespace twozerofoureight
         public int[,] GetBoard()
         {
             return board;
+        }
+        public int GetScore()
+        {
+            return result;
         }
 
         public TwoZeroFourEightModel(int size)
@@ -39,6 +44,7 @@ namespace twozerofoureight
 
         private int[,] Random(int[,] input)
         {
+            int count = 0;
             while (true)
             {
                 int x = rand.Next(boardSize);
@@ -48,6 +54,8 @@ namespace twozerofoureight
                     board[x, y] = 2;
                     break;
                 }
+                count++;
+                if (count > 15) break;
             }
             return input;
         }
@@ -59,6 +67,7 @@ namespace twozerofoureight
             int[] rangeX = Enumerable.Range(0, boardSize).ToArray();
             int[] rangeY = Enumerable.Range(0, boardSize).ToArray();
             Array.Reverse(rangeY);
+
             foreach (int i in rangeX)
             {
                 pos = 0;
@@ -83,6 +92,7 @@ namespace twozerofoureight
                     {
                         buffer[j - 1] *= 2;
                         buffer[j] = 0;
+                        result += buffer[j - 1];
                     }
                 }
                 // shift left again
@@ -135,6 +145,7 @@ namespace twozerofoureight
                     {
                         buffer[j - 1] *= 2;
                         buffer[j] = 0;
+                        result += buffer[j - 1];
                     }
                 }
                 // shift left again
@@ -189,6 +200,7 @@ namespace twozerofoureight
                     {
                         buffer[j - 1] *= 2;
                         buffer[j] = 0;
+                        result += buffer[j - 1];
                     }
                 }
                 // shift left again
@@ -240,6 +252,7 @@ namespace twozerofoureight
                     {
                         buffer[j - 1] *= 2;
                         buffer[j] = 0;
+                        result += buffer[j - 1];
                     }
                 }
                 // shift left again
