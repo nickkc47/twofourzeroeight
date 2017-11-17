@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace twozerofoureight //nickkkkkkkkkk
+namespace twozerofoureight //nickkkkkkkkkkk
 {
     class TwoZeroFourEightModel : Model
     {
